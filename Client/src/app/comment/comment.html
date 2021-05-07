@@ -1,0 +1,52 @@
+<div class="ui one column grid">	
+	<div class="column" ng-controller="CommentController">
+		<!-- <div class="ui piled blue segment"> -->
+		<div class="ui segment">
+			<h2 class="ui header"><i class="icon inverted square blue comment"></i>Komentarze</h2>
+			<div class="ui comments">
+				<div>		
+					<div class="comment" ng-repeat="comment in comments">
+						<a class="avatar">
+							<!-- <img src="/images/demo/avatar.jpg"> -->
+						</a>
+						<div class="content">
+							<a class="author">{{comment.username}}</a>
+							<div class="metadata">
+								<span class="date">{{comment.createdDate | date: 'dd-MM-yyyy HH:mm'}}</span>
+							</div>
+							<div class="text">
+								{{comment.text}}
+							</div>
+							<div class="actions">
+								<a class="delete" ng-click="deleteComment(comment)">Usuń</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div name="addCommentForm" class="ui reply form">
+						<div class="field">
+							<input name="username" type="text" ng-model="comment.username" placeholder="Pseudonim" required />
+						       	<span class="error" ng-show="commentForm.input.$error.required">Required</span>
+						</div>
+						<div class="text" ng-show="commentLengthIsValid()">
+							{{commentRemainingCharactersText()}}
+						</div>
+						<div class="text" ng-show="!commentLengthIsValid()">
+							{{commentIsToLongText()}}
+						</div>
+						<div class="field"> 
+							<textarea name="commentText" ng-model="comment.text" placeholder="Treść komentarza"></textarea>
+						</div>
+						<div class="ui fluid labeled icon disabled button" ng-show="!commentLengthIsValid()"> 
+							<i class="icon edit"></i> 
+							Dodaj 
+						</div>
+						<div class="ui fluid blue labeled submit icon button" ng-show="commentLengthIsValid()" ng-click="addComment()"> 
+							<i class="icon edit"></i> 
+							Dodaj 
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

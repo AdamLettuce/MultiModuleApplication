@@ -1,0 +1,71 @@
+<!-- <div class="ui one column grid">	 -->
+	<div class="ui column">		
+		<div class="ui form segment" ng-controller="PrivatePersonController">
+			<h2 class="ui header"><i class="icon inverted square blue user"></i>Osoba fizyczna</h2>
+			<div class="ui accordion">
+				<div class="active title">
+					<i class="dropdown icon"></i>Dane osobowe
+				</div>
+				<div class="active content">
+					<div class="field">
+						<input name="first-name" type="text" ng-model="privatePerson.firstName" placeholder="Imię" />
+					</div>
+					<div class="field">
+						<input name="second-name" type="text" ng-model="privatePerson.secondName" placeholder="Drugie imię" />
+					</div>					
+					<div class="field">
+						<input name="surname" type="text" ng-model="privatePerson.lastName" placeholder="Nazwisko" />
+					</div>
+					<div class="field">
+						<input name="date-of-birth" type="text" ng-model="privatePerson.dateOfBirth" placeholder="Data urodzenia" pick-a-date="curDate" 
+						pick-a-date-options="{format:'yyyy-mm-dd', selectYears: true, selectMonths: true}"/>						
+					</div>
+					<div class="field">
+						<div class="ui fluid dropdown selection">
+							<input type="hidden" name="gender">
+							<div class="default text">Płeć</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" ng-click="select('MALE')">Mężczyzna</div>
+								<div class="item" ng-click="select('FEMALE')">Kobieta</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>&nbsp;</div>
+			<div class="ui accordion">
+				<div class="active title">
+					<i class="dropdown icon"></i>Dane kontaktowe
+				</div>
+				<div class="active content">
+					<div class="two fields">
+						<div class="field">
+							<input name="postal-code" type="text" ng-model="privatePerson.addresses[0].postalCode" placeholder="Kod pocztowy" />
+						</div>
+						<div class="field">
+							<input name="city" type="text" ng-model="privatePerson.addresses[0].city"placeholder="Miasto" />
+						</div>
+					</div>
+					<div class="field">
+						<input name="street" type="text" ng-model="privatePerson.addresses[0].street" placeholder="Ulica nr domu / nr mieszkania" />
+					</div>
+					<div class="field">
+						<input name="e-mail" type="text" ng-model="privatePerson.email" placeholder="adres@email.com" />
+					</div>
+				</div>
+			</div>
+			<div>&nbsp;</div>
+			<div class="ui accordion">
+				<div class="ui fluid labeled icon disabled button" ng-show="!privatePersonIsValid">
+					<i class="icon save"></i> 
+					Zapisz
+				</div>
+				<div class="ui blue fluid labeled submit icon button" ng-show="privatePersonIsValid" ng-click="addPrivatePerson()"> 
+					<i class="icon save"></i> 
+					Zapisz
+				</div>			
+			</div>			
+		</div>
+	</div>
+<!-- </div> -->
