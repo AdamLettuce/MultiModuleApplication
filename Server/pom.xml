@@ -14,7 +14,7 @@
         <springSecurityVersion>4.0.0.M2</springSecurityVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <start-class>pl.adamsalata.application.ApplicationConfiguration</start-class>
+        <start-class>pl.adamlettuce.application.ApplicationConfiguration</start-class>
     </properties>
 
     <repositories>
